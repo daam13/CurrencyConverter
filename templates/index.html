@@ -15,41 +15,58 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <script src="/static/script.js"></script>
+
 </head>
 
 <body>
     <div class="" id="alert"></div>
-    <form id="currencyForm">
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="initialCurrency">From</label>
-            <select class="form-select" id="initialCurrency">
-                <option selected>Select currency</option>
-                <option value="CRC">CRC</option>
-                <option value="JPY">JPY</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="MXN">MXN</option>
-                <option value="VEF">VEF</option>
-            </select>
-            <input type="text" id="amount" required>
-            <label for="amount">Amount</label>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="card">
+                <div class="card-header">
+                    Converter
+                </div>
+                <div class="card-body">
+                    <form id="currencyForm">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="initialCurrency">From</label>
+                            <select class="form-select" id="initialCurrency">
+                                <option selected>Select currency</option>
+                                <option value="CRC">CRC</option>
+                                <option value="JPY">JPY</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="MXN">MXN</option>
+                                <option value="VEF">VEF</option>
+                            </select>
+                            <label for="amount" class="ms-3 me-3">Amount</label>
+                            <input type="text" id="amount" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="finalCurrency">To</label>
+                            <select class="form-select me-3" id="finalCurrency">
+                                <option selected>Select currency</option>
+                                <option value="CRC">CRC</option>
+                                <option value="JPY">JPY</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="MXN">MXN</option>
+                                <option value="VEF">VEF</option>
+                            </select>
+                            <button id="convertBtn" class="btn btn-primary rounded">Convert</button>
+                            <h6 id="result"></h6>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="finalCurrency">To</label>
-            <select class="form-select" id="finalCurrency">
-                <option selected>Select currency</option>
-                <option value="CRC">CRC</option>
-                <option value="JPY">JPY</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="MXN">MXN</option>
-                <option value="VEF">VEF</option>
-            </select>
-            <button id="convertBtn">Convert</button>button></button>
-            <h6 id="result"></h6>
-        </div>label></label>">
-    </form>
-    <script src="/static/script.js"></script>
+        <div class="row mt-5 justify-content-center">
+            <h1 id="result"></h1>
+        </div>
+    </div>
+    
 </body>
 
 </html>

@@ -8,6 +8,6 @@ RUN pip3 install -r /app/requirements.txt
 
 COPY . .
 
-ENV FLASK_APP=currency_conversor
+ENV FLASK_APP=currency_converter
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
