@@ -32,13 +32,14 @@
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="initialCurrency">From</label>
                             <select class="form-select" id="initialCurrency">
-                                <option selected>Select currency</option>
+                                <option>Select currency</option>
                                 <option value="CRC">CRC</option>
                                 <option value="JPY">JPY</option>
                                 <option value="EUR">EUR</option>
                                 <option value="GBP">GBP</option>
                                 <option value="MXN">MXN</option>
                                 <option value="VEF">VEF</option>
+                                <option value="USD">USD</option>
                             </select>
                             <label for="amount" class="ms-3 me-3">Amount</label>
                             <input type="text" id="amount" class="form-control" required>
@@ -46,16 +47,16 @@
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="finalCurrency">To</label>
                             <select class="form-select me-3" id="finalCurrency">
-                                <option selected>Select currency</option>
+                                <option>Select currency</option>
                                 <option value="CRC">CRC</option>
                                 <option value="JPY">JPY</option>
                                 <option value="EUR">EUR</option>
                                 <option value="GBP">GBP</option>
                                 <option value="MXN">MXN</option>
                                 <option value="VEF">VEF</option>
+                                <option value="USD">USD</option>
                             </select>
                             <button id="convertBtn" class="btn btn-primary rounded">Convert</button>
-                            <h6 id="result"></h6>
                         </div>
                     </form>
 
@@ -63,7 +64,8 @@
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
-            <h1 id="result"></h1>
+            <div class="col-4" id="result">
+            </div>
         </div>
     </div>
     

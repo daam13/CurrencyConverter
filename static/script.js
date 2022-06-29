@@ -1,10 +1,6 @@
-const backend = 'http://localhost:8000';
-
+const backend = 'http://localhost:5000';
+let initialC, finalC, amount;
 let currencies = ['CRC', 'JPY', 'EUR', 'USD', 'GBP', 'MXN', 'VEF'];
-
-function fillCurrenciesCB(){
-
-}
 
 function formIsValid(initialC, finalC, value) {
     if (initialC != '' && finalC != '' && value != '') {
@@ -23,7 +19,10 @@ function getResult() {
             if (!response.ok) {
                 throw new Error();
             } else {
-                document.querySelector('#result').innerHTML = (await response.json()).result;
+                let div = document.querySelector('#result')
+                div.innerHTML = `<h1>Result ${parseFloat((await response.json()).result).toFixed(2)}</h1>`;
+                div.classList.toggle('badge');
+                div.classList.toggle('bg-success');
             }
         } catch (e) {
             alert('response failed');
@@ -33,13 +32,17 @@ function getResult() {
 
 
 function loaded(){
-    let currencyForm = documents.querySelector('#currencyForm');
-    const initialC = document.querySelector('#initialCurrency').value;
-    const finalC = document.querySelector('#finalCurrency').value;
-    const amount = document.querySelector('#amount').value;
-
+    
+    
+    
     // event listener
     document.querySelector('#convertBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        initialC = document.getElementById('initialCurrency').value;
+        finalC = document.getElementById('finalCurrency').value;
+        amount = document.getElementById('amount').value;
+
         if(formIsValid(initialC, finalC, amount)) {
             getResult();
         } else alert('error');
