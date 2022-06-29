@@ -74,4 +74,9 @@ To check that the access was correct it's possible to list the working directory
 ```
    
 ---
+Team members:
+- Carlos Albornoz
+- Gianluca Gibellato
+- Darla Albornoz
+
 :tiger:
