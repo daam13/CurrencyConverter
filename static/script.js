@@ -21,8 +21,8 @@ function getResult() {
             } else {
                 let div = document.querySelector('#result')
                 div.innerHTML = `<h1>Result ${parseFloat((await response.json()).result).toFixed(2)}</h1>`;
-                div.classList.toggle('badge');
-                div.classList.toggle('bg-success');
+                div.classList.add('badge')
+                div.classList.add('bg-success');
             }
         } catch (e) {
             alert('response failed');
